@@ -1,0 +1,1 @@
+rubberDuck.remove();
