@@ -86,4 +86,14 @@ document.addEventListener('DOMContentLoaded', (e) => {
         displayReply();
     });
 
+    // const closeButton = document.getElementById('button');
+    // closeButton.addEventListener('click', (e) => {
+    //     chrome.action.setPopup({popup: ""});
+    // })
+
 });
+
+// myFunction() {
+//     chrome.browserAction.setPopup({popup: ""});
+// }
+

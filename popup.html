@@ -7,15 +7,17 @@
     <link href="https://fonts.cdnfonts.com/css/larsseit-font-family" rel="stylesheet">
     <style>
         body {
-            width: 300px;
-            font-size: 16px;
+            width: 500px;
+            font-size: 24px;
             font-family: 'Larsseit', sans-serif;
             margin-left: 20px;
         }
         h2 {
             font-family: 'Larsseit Bold', sans-serif;
+            color: #fff;;
             line-height: 125%;
             margin-right: 25px;
+            font-size: 32px;
         }
         img {
             max-height: 70px;
@@ -25,50 +27,64 @@
         }
 
         input[type=text] {
-            width: 130px;
+            width: 100%;
             box-sizing: border-box;
             border: 2px solid #ccc;
             border-radius: 4px;
             cursor: text;
-            font-size: 16px;
+            font-size: 24px;
             background-color: transparent;
             padding: 12px;
-            transition: width 0.4s ease-in-out;
+            transition: box-shadow 0.4s ease-in-out;
             margin: 10px 0px;
         }
 
-        input:focus {
+        input:hover, :focus {
             outline: none !important;
             border:1px solid;
             box-shadow: 0 0 3px  rgb(69, 66, 69);
         }
 
-        input[type=text]:hover {
-             width: 100%;
+        .powered {
+            color: rgb(180, 180, 180);
+            font-size: 16px;
         }
-
+        .banner {
+            display: flex;
+            flex: row;
+            align-items: center;
+            justify-content: center;
+        }
         .container {
             display: flex;  
             flex-direction: column;
         }
         .ext-header {
-            display: flex;
-            flex-direction: row;
             margin-bottom: 20px;
-            align-items: center;
-            /* justify-content: center; */
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #ccc;
+            background-color: #400d40;;
+            position: sticky;
+            top: 0;
         }
         .last-input {
             margin-bottom: 0px !important;
         }
+        .button-container {
+            display: flex;
+            flex: row;
+        }
         .button {
+            width: fit-content;
             background-color: #400d40;
+            border: none;
             border-radius: 5px;
             color:#fff;
             cursor: pointer;
             margin-top: 5px;
             padding: 16px 40px;
-            font-size:16px;
+            font-size:24px;
             font-family: 'Larsseit', sans-serif;  
         }
         .button:hover {
@@ -102,9 +118,13 @@
 
 <div class="container">
     <div class="ext-header">
-        <h2> RubberDucker <span><br>Help-Desk</span> </h2>
-        <img src="./images/rubberDuck-128.png">
+        <div class="banner">
+            <h2> RubberDucker <span><br>Help-Desk</span> </h2>
+            <img src="./images/rubberDuck-128.png">
+        </div>
+        <div class="powered"> powered by OpenAI </div>
     </div>
+
 
     <form id="form">
         <label for="created_by">What is the problem?</label>
@@ -125,6 +145,7 @@
         <br><br>
         <input class="button" type="submit">
     </form>
+    <!-- <button id="button" onclick=myFunction()>Close Pop-Up</button> -->
 
     <div class="typing-container">
         <p id="typing-text"></p>
