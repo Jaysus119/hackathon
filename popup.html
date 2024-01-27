@@ -4,31 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.cdnfonts.com/css/larsseit-font-family" rel="stylesheet">
     <style>
         body {
-            min-width: min-content;
+            width: 300px;
+            font-size: 16px;
+            font-family: 'Larsseit', sans-serif;
+            margin-left: 20px;
         }
+        h2 {
+            font-family: 'Larsseit Bold', sans-serif;
+            line-height: 125%;
+            margin-right: 25px;
+        }
+        img {
+            max-height: 70px;
+        }
+        p {
+            color: rgb(69, 66, 69);
+        }
+
+        input[type=text] {
+            width: 130px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            cursor: text;
+            font-size: 16px;
+            background-color: transparent;
+            padding: 12px;
+            transition: width 0.4s ease-in-out;
+            margin: 10px 0px;
+        }
+
+        input:focus {
+            outline: none !important;
+            border:1px solid;
+            box-shadow: 0 0 3px  rgb(69, 66, 69);
+        }
+
+        input[type=text]:hover {
+             width: 100%;
+        }
+
         .container {
-            display: flex;
+            display: flex;  
             flex-direction: column;
         }
+        .ext-header {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+            align-items: center;
+            /* justify-content: center; */
+        }
+        .last-input {
+            margin-bottom: 0px !important;
+        }
+        .button {
+            background-color: #400d40;
+            border-radius: 5px;
+            color:#fff;
+            cursor: pointer;
+            margin-top: 5px;
+            padding: 16px 40px;
+            font-size:16px;
+            font-family: 'Larsseit', sans-serif;  
+        }
+        .button:hover {
+            opacity: 90%;
+        }
+
+        #typing-text {
+            margin-top: 16px;
+            font-size: 1.25em;
+        }
+
+        .typing-indicator {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+        }
+
+        @keyframes blink {
+            0%, 50%, 100% {
+                opacity: 0.5;
+            }
+            25%, 75% {
+                opacity: 1;
+            }
+        }    
     </style>
     <script src="background.js"></script>
 </head>
 <body>
 
 <div class="container">
+    <div class="ext-header">
+        <h2> RubberDucker <span><br>Help-Desk</span> </h2>
+        <img src="./images/rubberDuck-128.png">
+    </div>
+
     <form id="form">
-        <label for="created_by">What is the problem?</label> 
+        <label for="created_by">What is the problem?</label>
+        <br>
         <input type="text" id="problem" name="problem">
+        <br><br>
         <label for="message">What did I expect to happen?</label>
+        <br>
         <input type="text" id="expectation" name="expectation">
+        <br><br>
         <label for="message">What have I tried?</label>
+        <br>
         <input type="text" id="tried" name="tried">
+        <br><br>
         <label for="message">Why I suspect it's not working?</label>
-        <input type="text" id="tried" name="tried">
-        <input type="submit">
+        <br>
+        <input class="last-input" type="text" id="tried" name="tried">
+        <br><br>
+        <input class="button" type="submit">
     </form>
+
+    <div class="typing-container">
+        <p id="typing-text"></p>
+    </div>
+
 </div>
 
     <script src='help.js'></script>

@@ -37,21 +37,49 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     "Trust the process.", 
                     "Don't let the imposter monster get you.", 
                     "👀👀👀👀👀👀", 
-                    "Keep trying! There's a pile of Mattbucks waiting for.", 
+                    "Keep trying! There's a pile of Mattbucks waiting for you.", 
                     "Read the documentation."];
 
-    function generateReply() {
+    const codesmithStaff = ['Matt Severyn',
+                            'Rachel Kucharaski',
+                            'Charlie Charboneau',
+                            'Robert Hoover',
+                            'Renee Toscan',
+                            'Lucas Contreras',
+                            'Jay Kura',
+                            'Chandler'];
+
+    function generateReply(inputArr) {
         const index = Math.floor(Math.random() * replies.length);
-        const reply = replies[index];
-        return reply;
+        const output = inputArr[index];
+        return output;
     };
 
     function displayReply() {
-        const reply = generateReply();
-        const replyElement = document.createElement('p');
-        replyElement.innerText = reply;
-        body.appendChild(replyElement);
-    };
+        const reply = generateReply(replies);
+        // const replyElement = document.createElement('p');
+        // body.appendChild(replyElement);
+        const ticketHandler = generateReply(codesmithStaff)
+        const textToType = `${ticketHandler} is typing...`;
+  
+        const typingText = document.getElementById('typing-text');
+
+        function typeText(index) {
+            typingText.textContent = textToType.slice(0, index);
+            if (index <= textToType.length) {
+                // Start typing animation
+                typingText.style ='animation: blink 1s infinite';
+                setTimeout(() => typeText(index + 1), 70);
+            } else {
+                // Typing animation finished, remove text and styling
+                setTimeout(() => typingText.removeAttribute('style'), 5000);
+                setTimeout(() => typingText.innerText = '', 5000);
+                setTimeout(() => typingText.innerText = reply, 5000);
+            }
+        }
+
+        typeText(0);
+};
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
