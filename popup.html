@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            min-width: min-content;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+    <script src="background.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <form id="form">
+        <label for="created_by">What is the problem?</label> 
+        <input type="text" id="problem" name="problem">
+        <label for="message">What did I expect to happen?</label>
+        <input type="text" id="expectation" name="expectation">
+        <label for="message">What have I tried?</label>
+        <input type="text" id="tried" name="tried">
+        <label for="message">Why I suspect it's not working?</label>
+        <input type="text" id="tried" name="tried">
+        <input type="submit">
+    </form>
+</div>
+
+    <script src='help.js'></script>
+</body>
+</html>

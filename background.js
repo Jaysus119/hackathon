@@ -5,6 +5,10 @@ chrome.runtime.onInstalled.addListener(() => {
   });
   
   chrome.action.onClicked.addListener(async (tab) => {
+    await chrome.action.setPopup({
+      popup: "popup.html"
+    });
+    console.log('clicked');
       const prevState = await chrome.action.getBadgeText({ tabId: tab.id });
       const nextState = prevState === 'ON' ? 'OFF' : 'ON';
       await chrome.action.setBadgeText({

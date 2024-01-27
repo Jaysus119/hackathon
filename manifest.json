@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Hackthon",
+    "name": "RubberDucker",
     "version": "1.0",
-    "description": "Making an extension",
+    "description": "A classic and powerful debugging tool.",
     "icons": {
         "48": "images/rubberDuck-48.png",
         "128": "images/rubberDuck-128.png"
@@ -10,17 +10,17 @@
     "background": {
         "service_worker": "background.js"
     },
-    "action": {
-        "default_icon": {
-            "48": "images/rubberDuck-48.png",
-            "128": "images/rubberDuck-128.png"
-          }   
-    },
     "permissions": ["activeTab", "scripting"],
     "web_accessible_resources": [
         {
           "resources": ["script.js", "images/rubberDuck-720.png"],
           "matches": ["<all_urls>"]
         }
-    ]
+    ],
+    "action": {
+        "default_icon": {
+            "48": "images/rubberDuck-48.png",
+            "128": "images/rubberDuck-128.png"
+          }
+    }
   }
